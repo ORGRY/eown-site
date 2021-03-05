@@ -17,7 +17,14 @@ rp.get({
       id: article.id,
       date: article.created_at
     })
-    fs.writeFile(`./articles/${article.id}.html`, article.body_html, () => console.log(article.id))
+    // read template html
+    fs.readFile('./templates/default.html', 'utf8', function (err, data) {
+      if (err) { console.log(err); return false; }
+      console.log(data)
+      var result = data.replace(/articleTitle/g, article.title);
+      result = result.replace(/articleContent/g, article.body_html);
+      fs.writeFile(`./articles/${article.id}.html`, result, () => console.log(article.id))
+    });
   }
   fs.writeFile('./articles/list.json', JSON.stringify(list), () => console.log('list.json'))
 })
