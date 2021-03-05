@@ -24,7 +24,14 @@
     object.then((packJson) => {
         var items = [];
         for (var p in packJson) {
-            items.push('<td><a href="').push('/articles/').push(packJson[p].id).push('.html"><cite>').push(packJson[p].title).push('</cite></a></td><td class="right"><time>').push(packJson[p].date).push('/time></td></tr>');
+            items.push('<td><a href="');
+            items.push('/articles/');
+            items.push(packJson[p].id);
+            items.push('.html"><cite>');
+            items.push(packJson[p].title);
+            items.push('</cite></a></td><td class="right"><time>');
+            items.push(packJson[p].date);
+            items.push('/time></td></tr>');
             document.getElementById('td_item').innerHTML = items.join('')
         }
     })
