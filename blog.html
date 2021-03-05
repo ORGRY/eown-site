@@ -30,7 +30,7 @@
             items.push('.html"><cite>');
             items.push(packJson[p].title);
             items.push('</cite></a></td><td class="right"><time>');
-            items.push(dateFormat("YYYY-mm-dd", packJson[p].date));
+            items.push(dateFormat("YYYY-mm-dd", new Date(packJson[p].date)));
             items.push('</time></td></tr>');
             document.getElementById('td_item').innerHTML = items.join('')
         }
