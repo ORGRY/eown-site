@@ -10,13 +10,3 @@ git remote set-url --add origin git@github.com:ORGRY/eown-site.git
 
 :: 推送到远程副分支  gh-pages
 git push origin gh-pages
-:: 拉取主分支代码
-git pull origin master
-:: 合并分支
-git merge fz
-:: 推送到主分支
-git push origin master
-:: 切换到fz
-git checkout fz
-:: 停顿 
-pause
